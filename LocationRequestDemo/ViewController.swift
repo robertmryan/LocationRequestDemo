@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    lazy var manager = CLLocationManager()
+
+    @IBAction func didTapWhenInUse(_ sender: Any) {
+        manager.requestWhenInUseAuthorization()
+    }
+    
+    @IBAction func didTapAlways(_ sender: UIButton) {
+        manager.requestAlwaysAuthorization()
     }
 
-
 }
-
